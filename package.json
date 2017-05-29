@@ -45,5 +45,5 @@
     "tslint": "~4.5.0",
     "typescript": "~2.2.0"
   },
-  "keywords": ["angular 4","firebase","crud","crud-app","business-listing"]
+  "keywords": ["angular 4","firebase","crud","crud-app","business-listing","foundation 6"]
 }
