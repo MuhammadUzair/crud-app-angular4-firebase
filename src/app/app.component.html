@@ -1,3 +1,364 @@
-<h1>
-  {{title}}
-</h1>
+<div class="top-bar">
+  <div class="row">
+    <div class="top-bar-left">
+      <div class="menu">
+        <ul>
+          <li class="menu-text">Business Contacts</li>
+        </ul>
+      </div>
+      <!--<div class="top-bar-right"></div>-->
+
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+<div class="row margin">
+  <div class="large-6 columns butnDiv">
+    <button class="button success btnWidth" (click)="changeState('add')">Add Business</button>
+
+  </div>
+  <div class="large-6 columns">
+    <label>
+     Filter Category
+     <select (change)="filterCategory(selectCategory.value)" #selectCategory>
+       <option *ngFor="let category of catagories" value="{{ category.name }}">{{ category.name }}</option>
+     </select>
+
+   </label>
+  </div>
+
+</div>
+
+
+
+
+
+<div *ngIf="appState == 'add' || appState == 'edit' || appState == 'extent'">
+  <div class="row">
+    <div class="large-12 columns">
+      <button (click)="changeState('default',0)" class="button alert btnWidth">Go Back</button>
+    </div>
+
+  </div>
+
+</div>
+
+<!--  Add Bussiness -->
+<div *ngIf="appState == 'add' " class="row">
+  <div class="large-12 columns">
+
+    <h3>Add Business</h3>
+    <form [formGroup]="form">
+
+      <div class="row">
+        <div class="large-6  small-12 columns">
+          <label>Company
+            <input type="text" placeholder="Company Name"
+             [formControl]="form.controls['company']" [(ngModel)]="newBusiness.company">
+          </label>
+        </div>
+        <div class="large-6 small-12 columns">
+          <label>Category
+            <select [formControl]="form.controls['category']" [(ngModel)]="newBusiness.category"  >
+              <option *ngFor="let category of catagories" value="{{ category.name }}">{{ category.name }}</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="large-6  small-12 columns">
+          <label>Years In Business
+             <input type="number" placeholder="year in Bussiness"
+             [formControl]="form.controls['yearInBusiness']" [(ngModel)]="newBusiness.yearInBusiness" >
+          </label>
+
+        </div>
+        <div class="large-6 small-12 columns">
+          <label>description
+             <input type="text" placeholder="description"
+               [formControl]="form.controls['description']" [(ngModel)]="newBusiness.description" >
+          </label>
+
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="large-6  small-12 columns">
+          <label>Phone
+             <input type="text" placeholder="Phone no" 
+              [formControl]="form.controls['phone']" [(ngModel)]="newBusiness.phone" >
+          </label>
+
+        </div>
+        <div class="large-6 small-12 columns">
+
+          <label>Email
+             <input type="text" placeholder="Email" 
+             [formControl]="form.controls['email']" [(ngModel)]="newBusiness.email" >
+          </label>
+
+        </div>
+      </div>
+
+
+
+      <div class="row">
+        <div class="large-6  small-12 columns">
+          <label>City
+             <input type="text" placeholder="city"
+             [formControl]="form.controls['city']" [(ngModel)]="newBusiness.city" >
+          </label>
+
+        </div>
+        <div class="large-6 small-12 columns">
+          <label>Street Address
+             <input type="text" placeholder="Street Address"
+             [formControl]="form.controls['streetAddress']" [(ngModel)]="newBusiness.streetAddress" >
+          </label>
+
+        </div>
+      </div>
+
+
+
+      <div class="row">
+        <div class="large-6  small-12 columns">
+          <label>State
+             <input type="text" placeholder="state"
+              [formControl]="form.controls['state']" [(ngModel)]="newBusiness.state" >
+          </label>
+
+        </div>
+        <div class="large-6 small-12 columns">
+          <label>Zip Code
+             <input type="text" placeholder="Zip Code" 
+              [formControl]="form.controls['zipCode']" [(ngModel)]="newBusiness.zipCode" >
+          </label>
+
+        </div>
+      </div>
+
+
+
+
+
+
+      <button class="button" (click)="addBusiness()" [disabled]="!newBusiness.company || !newBusiness.category
+     || !newBusiness.yearInBusiness || !newBusiness.description || !newBusiness.phone || !newBusiness.email 
+     || !newBusiness.streetAddress || !newBusiness.state || !newBusiness.zipCode || !newBusiness.city">submit</button>
+
+    </form>
+  </div>
+</div>
+
+
+
+
+<!--  Edit Bussiness -->
+<div *ngIf="appState == 'edit' " class="row">
+  <div class="large-12 columns">
+
+    <h3>Edit Business</h3>
+    <form [formGroup]="form">
+
+
+      <div class="row">
+        <div class="large-6  small-12 columns">
+          <label>Company
+            <input type="text" placeholder="Company Name" name="activeCompany"
+             [formControl]="form.controls['activeCompany']" [(ngModel)]="activeCompany" >
+          </label>
+
+
+        </div>
+        <div class="large-6 small-12 columns">
+          <label>Category
+            <select [formControl]="form.controls['activeCategory']" [(ngModel)]="activeCategory">
+              <option *ngFor="let category of catagories" value="{{ category.name }}">{{ category.name }}</option>
+            </select>
+          </label>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="large-6  small-12 columns">
+          <label>Years In Business
+             <input type="number" placeholder="year in Bussiness"
+             [formControl]="form.controls['activeYearInBusiness']" [(ngModel)]="activeYearInBusiness" >
+          </label>
+
+
+        </div>
+        <div class="large-6 small-12 columns">
+          <label>description
+             <input type="text" placeholder="description"
+               [formControl]="form.controls['activeDescription']" [(ngModel)]="activeDescription" >
+          </label>
+
+
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="large-6  small-12 columns">
+          <label>Phone
+             <input type="text" placeholder="Phone no" 
+              [formControl]="form.controls['activePhone']" [(ngModel)]="activePhone" >
+          </label>
+
+
+        </div>
+        <div class="large-6 small-12 columns">
+          <label>Email
+             <input type="text" placeholder="Email" 
+             [formControl]="form.controls['activeEmail']" [(ngModel)]="activeEmail" >
+          </label>
+
+
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="large-6  small-12 columns">
+          <label>City
+             <input type="text" placeholder="city"
+             [formControl]="form.controls['activeCity']" [(ngModel)]="activeCity" >
+          </label>
+
+
+        </div>
+        <div class="large-6 small-12 columns">
+          <label>Street Address
+             <input type="text" placeholder="Street Address"
+             [formControl]="form.controls['activeStreetAddress']" [(ngModel)]="activeStreetAddress" >
+          </label>
+
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="large-6  small-12 columns">
+          <label>State
+             <input type="text" placeholder="Street Address"
+              [formControl]="form.controls['activeState']" [(ngModel)]="activeState" >
+          </label>
+
+
+        </div>
+        <div class="large-6 small-12 columns">
+          <label>Zip Code
+             <input type="text" placeholder="Zip Code" 
+              [formControl]="form.controls['activeZipCode']" [(ngModel)]="activeZipCode" >
+          </label>
+
+
+        </div>
+      </div>
+
+
+      <button class="button btnWidth" (click)="updateBusiness()"
+      [disabled]="!activeCompany || !activeCategory || !activeYearInBusiness
+     || !activeDescription || !activePhone || !activeEmail || !activeCity 
+     || !activeStreetAddress || !activeState || !activeZipCode">
+     Update
+     </button>
+
+    </form>
+  </div>
+</div>
+
+
+<div *ngIf="appState == 'extent' ">
+  <div *ngFor="let businessData of business">
+    <div *ngIf="businessData.$key == activeKey">
+      <div class="row">
+        <div class="large-5 columns large-offset-1">
+          <h3>{{businessData.company}}</h3>
+          <p>Category: {{ businessData.category }}</p>
+          <p>Years In Business: {{ businessData.yearInBusiness }}</p>
+          <p>{{ businessData.description }}</p>
+        </div>
+
+      </div>
+      <div class="row">
+        <h4>Contect Info</h4>
+        <ul>
+          <li>
+            <div>{{businessData.phone}} </div>
+            <div>{{businessData.email}} </div>
+            <div>{{businessData.streetAddress}} </div>
+            <div>{{businessData.city}} </div>
+            <div>{{businessData.state}} </div>
+            <div>{{businessData.zipCode}} </div>
+
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="large-12 columns">
+    <div *ngIf="business">
+      <table>
+        <thead>
+
+          <tr>
+            <th>Company</th>
+            <th>Category</th>
+            <th>Phone</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let businessData of business">
+            <td>{{businessData.company}}</td>
+            <td>{{businessData.category}}</td>
+            <td>{{businessData.phone}}</td>
+            <td>
+              <button class="button " (click)="changeState('extent',businessData.$key)">More</button>
+              <button class="button secondary" (click)="showEdit(businessData)">Edit</button>
+              <button class="button alert" (click)="deleteBusiness(businessData.$key)">Delete</button>
+            </td>
+          </tr>
+
+
+
+
+
+        </tbody>
+
+      </table>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!--<ul>
+  <li class="text" *ngFor="let businessData of business">
+    <div>{{businessData.company}} </div>
+
+  </li>
+</ul>-->

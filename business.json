@@ -1,0 +1,64 @@
+[
+		{
+			"category":"IT", 
+			"city":"karachi",
+			"company":"TRG",
+			"description":"IT compant",
+			"email": "trg@trg.com",
+			"phone":"03451234567",
+			"state":"sindh",
+			"streetAddress":"23 karachi",
+			"yearInBusiness":"6",
+			"zipeCode":"75230"
+		},
+		{
+			"category":"IT", 
+			"city":"lahore",
+			"company":"doozie",
+			"description":"IT compant",
+			"email": "doozie@doozie.com",
+			"phone":"03451234567",
+			"state":"sindh",
+			"streetAddress":"23 karachi",
+			"yearInBusiness":"6",
+			"zipeCode":"75230"
+		},
+		{
+			"category":"IT", 
+			"city":"Islamabad",
+			"company":"tech app solutions",
+			"description":"IT compant",
+			"email": "techapp@techapp.com",
+			"phone":"03451234567",
+			"state":"sindh",
+			"streetAddress":"23 karachi",
+			"yearInBusiness":"6",
+			"zipeCode":"75230"
+		},
+		{
+			"category":"Retail", 
+			"city":"karachi",
+			"company":"TRG",
+			"description":"IT compant",
+			"email": "trg@trg.com",
+			"phone":"03451234567",
+			"state":"sindh",
+			"streetAddress":"23 karachi",
+			"yearInBusiness":"6",
+			"zipeCode":"75230"
+		},
+		{
+			"category":"Resturant",
+			"city":"karachi",
+			"company":"TRG",
+			"description":"IT compant",
+			"email": "trg@trg.com",
+			"phone":"03451234567",
+			"state":"sindh",
+			"streetAddress":"23 karachi",
+			"yearInBusiness":"6",
+			"zipeCode":"75230"
+		}
+		
+
+]

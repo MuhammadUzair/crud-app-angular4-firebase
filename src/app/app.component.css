@@ -1,0 +1,25 @@
+.top-bar,.menu > ul{
+     background-color: #e67e22;
+     color: #fff;
+}
+
+.menu > ul >li {
+ list-style-type: none;
+ font-size: 26px;
+}
+.margin{
+    margin-top: 10px;
+}
+.butnDiv{
+    margin-top: 20px;
+   
+}
+.btnWidth{
+    width: 200px;
+    color: #fff !important;
+}
+@media(max-width:992px){
+    .btnWidth{
+    width: 100% !important;
+}
+}
