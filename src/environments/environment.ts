@@ -8,7 +8,7 @@
 // };
 
 export const environment = {
-  production: false,
+  production: true,
   firebase: {
     apiKey: "AIzaSyCNC7rQDo3xqBypQoGQcHagm6m6U9jzvwo",
     authDomain: "businesscontacts-eb3dc.firebaseapp.com",

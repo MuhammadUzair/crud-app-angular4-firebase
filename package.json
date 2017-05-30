@@ -22,6 +22,7 @@
     "@angular/router": "^4.0.0",
     "angularfire2": "^4.0.0-rc.0",
     "core-js": "^2.4.1",
+    "express": "^4.15.3",
     "firebase": "^4.0.0",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
@@ -45,5 +46,12 @@
     "tslint": "~4.5.0",
     "typescript": "~2.2.0"
   },
-  "keywords": ["angular 4","firebase","crud","crud-app","business-listing","foundation 6"]
+  "keywords": [
+    "angular 4",
+    "firebase",
+    "crud",
+    "crud-app",
+    "business-listing",
+    "foundation 6"
+  ]
 }
