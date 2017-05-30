@@ -1,6 +1,6 @@
 # Crud app usig angular 4 and firebase
 
-For Demo [todos-mean-app.herokuapp.com](https://firebase-crud.herokuapp.com/)
+For Demo [firebase-crud.herokuapp.com](https://firebase-crud.herokuapp.com/)
 
 ## Development server
 
