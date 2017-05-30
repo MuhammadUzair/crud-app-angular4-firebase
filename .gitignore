@@ -3,7 +3,6 @@ business.json
 catagories.json
 
 # compiled output
-/dist
 /tmp
 /out-tsc
 
